@@ -7,6 +7,7 @@ import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.keyframes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -64,6 +65,8 @@ fun OutLineTextFieldString(
     value: String,
 ) {
 
+    val color = if (isSystemInDarkTheme()) Color.LightGray else Color.Black
+    val color2 = if (isSystemInDarkTheme()) Color.LightGray else Color.White
     var text by remember { mutableStateOf(TextFieldValue(value)) }
 
     OutlinedTextField(
@@ -73,10 +76,10 @@ fun OutLineTextFieldString(
             text = it
             onNameChange(it.text)
         }, colors = TextFieldDefaults.textFieldColors(
-            focusedIndicatorColor = Color.Black,
+            focusedIndicatorColor = color,
             unfocusedIndicatorColor = labelColor,
-            containerColor = Color.Transparent ,
-            cursorColor = Color.Black,
+            containerColor = color2 ,
+            cursorColor = color,
             textColor = Color.Black
 
         ), modifier = modifier, singleLine = true
@@ -89,6 +92,8 @@ fun CustomLoading(
     spaceBetween: Dp = 10.dp,
     travelDistance: Dp = 20.dp,
 ) {
+    val color = if (isSystemInDarkTheme()) Color.LightGray else Color.Black
+
     val circles = listOf(
         remember { Animatable(initialValue = 0f) },
         remember { Animatable(initialValue = 0f) },
@@ -129,7 +134,7 @@ fun CustomLoading(
                         translationY = -value * distance
                     }
                     .background(
-                        color = Color.DarkGray,
+                        color = color,
                         shape = CircleShape
                     )
             )
@@ -146,11 +151,13 @@ fun CircularIcon(
     modifier: Modifier = Modifier,
     imgSizeWithDP: Dp = 50.dp,
 ) {
+    val color = if (isSystemInDarkTheme()) Color.DarkGray else Color.White
+
     IconButton(
         onClick = onClick,
         modifier = modifier
             .clip(CircleShape)
-            .background(background)
+            .background(color)
     ) {
 
         val iconPainter = painterResource(resID)
