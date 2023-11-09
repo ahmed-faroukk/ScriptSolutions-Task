@@ -10,6 +10,14 @@
 
 # APK Download
   <a href="https://drive.google.com/file/d/1VbjpVg2VkHtft4SQSxVbPKD2QSeoxeoI/view?usp=sharing" rel="nofollow">Click here</a>
+
+# demo 
+
+
+https://github.com/ahmed-faroukk/ScriptSolutions-Task/assets/72602749/305ffa93-d18e-476e-a676-e7228f07d9fb
+
+
+
 # App-Arch 
 
 ![Screenshot from 2023-11-09 04-21-21](https://github.com/ahmed-faroukk/ScriptSolutions-Task/assets/72602749/bcff7228-d525-4b8c-a734-41ad17005429)
