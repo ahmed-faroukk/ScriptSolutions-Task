@@ -1,4 +1,4 @@
-package com.cyberdunkers.script_solution_task.domin.usecase
+package com.cyberdunkers.script_solution_task.domin.usecase.search
 
 import com.cyberdunkers.script_solution_task.domin.repository.SearchRepo
 import kotlinx.coroutines.flow.MutableStateFlow

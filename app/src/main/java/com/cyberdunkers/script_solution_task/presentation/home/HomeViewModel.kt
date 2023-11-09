@@ -2,7 +2,7 @@ package com.cyberdunkers.script_solution_task.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cyberdunkers.script_solution_task.domin.usecase.HandleSearchUseCases
+import com.cyberdunkers.script_solution_task.domin.usecase.search.HandleSearchUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,6 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val handleSearchUseCases: HandleSearchUseCases,
+
 ) : ViewModel() {
 
     private val _searchText = MutableStateFlow("")
@@ -28,6 +29,9 @@ class HomeViewModel @Inject constructor(
 
     private val _persons = MutableStateFlow(clients)
     val persons = searchText
+
+
+
         .debounce(1000L)
         .onEach { _isSearching.update { true } }
         .combine(_persons) { text, persons ->
