@@ -4,6 +4,7 @@ import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -23,7 +24,7 @@ fun ImagesIndicator(
     modifier: Modifier = Modifier,
     pageSize: Int,
     selectedPage: Int,
-    selectedColor: Color = Color.Black,
+    selectedColor: Color = if (isSystemInDarkTheme())Color.LightGray else Color.DarkGray,
     unSelectedColor: Color = Color.DarkGray,
 ) {
 
@@ -36,7 +37,6 @@ fun ImagesIndicator(
                 ),
                 label = ""
             )
-
 
             Box(
                 modifier = Modifier

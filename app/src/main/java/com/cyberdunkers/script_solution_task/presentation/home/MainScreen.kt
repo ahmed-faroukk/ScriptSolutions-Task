@@ -4,6 +4,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -54,7 +55,7 @@ fun MainScreen(
     val lazyListState = rememberLazyListState()
     LazyColumn(
         Modifier
-            .padding(vertical = 10.dp, horizontal = 5.dp)
+            .padding(horizontal = 5.dp)
             .fillMaxSize(),
         state = lazyListState
     ) {
@@ -66,12 +67,12 @@ fun MainScreen(
                 Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+
                 OutLineTextFieldString(
                     value = searchText.value,
                     label = "search ",
                     onNameChange = viewModel::onSearchTextChange, modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.White)
                         .padding(horizontal = 10.dp)
                 )
                 Spacer(modifier = Modifier.height(25.dp))
@@ -86,7 +87,7 @@ fun MainScreen(
 
         }
 
-        items(persons.value) { person ->
+        items(persons.value, ) { person ->
             Column(
                 Modifier
                     .fillMaxWidth()

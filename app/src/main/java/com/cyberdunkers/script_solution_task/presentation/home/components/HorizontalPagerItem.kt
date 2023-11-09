@@ -2,6 +2,7 @@ package com.cyberdunkers.script_solution_task.presentation.home.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
@@ -24,7 +25,7 @@ fun CardItem(modifier: Modifier = Modifier, img: Int, title: String) {
             .padding(top = 10.dp)
             .padding(10.dp)
             .shadow(elevation = 20.dp)
-            .background(Color.White, RoundedCornerShape(20.dp))
+            .background(if (isSystemInDarkTheme())Color.DarkGray else Color.White, RoundedCornerShape(20.dp))
     ) {
         Image(
             painter = painterResource(id = img),
