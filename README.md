@@ -30,4 +30,6 @@
   <li>flow</li>
   <li>leakCanary</li>
   <li>Observing your network connection with Flow</li>
+    <li>OOP & Solid Principles</li>
+
 </ul>
