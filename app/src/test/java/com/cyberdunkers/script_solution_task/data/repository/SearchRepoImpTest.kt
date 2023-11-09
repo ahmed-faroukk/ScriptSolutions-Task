@@ -56,7 +56,6 @@ class SearchRepoImpTest {
 
         repo.onSearchTextChange(newText, searchText)
 
-        // Ensure that the searchText remains the same
         assertEquals(initialText, searchText.value)
     }
 }
